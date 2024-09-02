@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".UserInfo_fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        app:title="User details"
+        android:background="#54BFF3"
+        android:layout_height="40dp"
+        app:titleTextColor="@color/white"
+        android:id="@+id/toolbar_posts" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardCornerRadius="15dp"
+
+        android:layout_margin="10dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:padding="5dp"
+        android:id="@+id/uName"
+         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="email"
+        android:padding="5dp"
+        android:id="@+id/uEmail"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="phone"
+        android:padding="5dp"
+        android:id="@+id/uPhone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address:"
+        android:padding="5dp"
+        android:id="@+id/uAdd"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Website:"
+        android:padding="5dp"
+        android:id="@+id/uWeb"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Company details:"
+        android:padding="5dp"
+        android:id="@+id/uComp"/>
+</LinearLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
