@@ -25,6 +25,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,39 +79,42 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<List<UsersModal>> call, Response<List<UsersModal>> response) {
 
                 if(!response.isSuccessful()){
-//                    Toast.makeText(MainActivity.this,"Response failed",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Response failed",Toast.LENGTH_SHORT).show();
                     return;
                 }
-//                Toast.makeText(MainActivity.this,"Data fetched",Toast.LENGTH_SHORT).show();
-                    list = response.body();
+
 
                 runOnUiThread(new Runnable(){
                     @Override
                     public void run(){
-//                        Toast.makeText(MainActivity.this,"Ui updated",Toast.LENGTH_SHORT).show();
+                        list = response.body();
                         adapter.notifyDataSetChanged();
                     }
                 });
-
-
-
-//                Toast.makeText(MainActivity.this,"List size inside api call:"+list.size(),Toast.LENGTH_SHORT).show();
-
             }
             @Override
             public void onFailure(Call<List<UsersModal>> call, Throwable throwable) {
                 Toast.makeText(MainActivity.this,"exception occured check internet",Toast.LENGTH_SHORT).show();
             }
         });
-
-
-//        Toast.makeText(MainActivity.this,"List size before click:"+list.size(),Toast.LENGTH_SHORT).show();
-
+//        try{
+//            Response<List<UsersModal>> response=call.execute();
+//            if(!response.isSuccessful())
+//            {
+//                return;
+//            }
+//            list=response.body();
+//            adapter.notifyDataSetChanged();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        catch(RuntimeException e){
+//
+//        }
         adapter.setOnClickListener(new UserListAdapter.OnClickListener() {
             @Override
             public void onClick(int position, UsersModal model) {
                 adapter.notifyDataSetChanged();
-//                Toast.makeText(MainActivity.this,"Recycler item clicked",Toast.LENGTH_SHORT).show();
                 Intent inext=new Intent(MainActivity.this, UserDash.class);
                 inext.putExtra("USer_data",model);
                 startActivity(inext);

@@ -34,13 +34,7 @@ public class UserDash extends AppCompatActivity {
         });
         Intent intent=getIntent();
         usersModal=(UsersModal)intent.getSerializableExtra("USer_data");
-        Toast.makeText(UserDash.this, "Name:"+usersModal.getName(), Toast.LENGTH_SHORT).show();
-
         bottomNavigationView=findViewById(R.id.bottom_navigation);
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction transaction = fragmentManager.beginTransaction();
-//        transaction.add(R.id.frame_layout, new UserInfo_fragment());
-//        transaction.commit();
         replaceFrag(new UserInfo_fragment(),0);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {

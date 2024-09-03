@@ -19,6 +19,8 @@
             app:menu="@menu/search_users_menu"
             android:layout_height="40dp"
             app:title="Search User"
+            app:titleTextColor="@color/white"
+            android:background="#54BFF3"
             android:id="@+id/toolbar" />
     </com.google.android.material.appbar.AppBarLayout>
 
